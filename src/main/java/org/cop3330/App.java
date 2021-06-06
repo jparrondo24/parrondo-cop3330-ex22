@@ -17,9 +17,11 @@ public class App {
         int i;
         for (i = start + 1; i <= j; i++) {
             if (arr[i] > arr[start]) {
-                while (j >= i && arr[j] > arr[start])
+                while (j >= i && arr[j] >= arr[start]) {
+                    if (i != j && arr[j] == arr[start])
+                        return false;
                     j--;
-
+                }
                 if (j >= i) {
                     if (j != i && arr[j] == arr[i])
                         return false;
